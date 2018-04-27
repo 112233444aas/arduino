@@ -1,0 +1,63 @@
+#include <Servo.h> 
+Servo servoLeft;
+Servo servoRight; 
+void setup() {
+  // put your setup code here, to run once:
+  servoLeft.attach(13);
+  servoRight.attach(12);  
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+//Serial.println("Photoresistor States");
+  //tri
+    servoRight.writeMicroseconds(1373);
+    servoLeft.writeMicroseconds(1699);
+    delay(2500);
+      
+    
+    servoRight.writeMicroseconds(1500);
+    servoLeft.writeMicroseconds(1699);
+    delay(1500);
+ //square 
+    /*Nomove(1000);
+    servoRight.writeMicroseconds(1373);
+    servoLeft.writeMicroseconds(1699);
+    delay(2500);
+      
+    
+    servoRight.writeMicroseconds(1500);
+    servoLeft.writeMicroseconds(1699);
+    delay(1150); 
+    /*servoRight.writeMicroseconds(1373);
+    servoLeft.writeMicroseconds(1699);
+    delay(4500);*/
+    //circle
+    //servoRight.writeMicroseconds(1450);
+    //servoLeft.writeMicroseconds(1650);
+}
+void forward(int time){
+  servoRight.writeMicroseconds(1300);
+  servoLeft.writeMicroseconds(1700);
+  delay(time);
+  }
+  void Right(int time){
+  servoRight.writeMicroseconds(1700);
+  servoLeft.writeMicroseconds(1700);
+  delay(time);
+  }
+  void Left(int time){
+  servoRight.writeMicroseconds(1300);
+  servoLeft.writeMicroseconds(1300); 
+  delay(time);
+  }
+  void backward(int time){
+  servoRight.writeMicroseconds(1700);
+  servoLeft.writeMicroseconds(1300);
+  delay(time);
+  }
+  void Nomove(int time){
+  servoRight.writeMicroseconds(1500);
+  servoLeft.writeMicroseconds(1500);
+  delay(time);
+  }
